@@ -1,15 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-  box-sizing: border-box;
+:root {
+  --color-brand--1: #FFFB2B;
+  --color-shade-1: #fffb40;
+  --color-shade-2: #fffd80;
+  --color-shade-3: #fffdaa;
+
+  --color-dark--0: #000;
+  --color-dark--1: #1f1d2b;
+  --color-dark--2: #252836;
+  --color-dark--3: #393c49;
+
+  --color-light--1: #fff;
+  --color-light--2: #abbbc2;
+  --color-light--3: #d6dee0;
+  --color-light--4: #E0E6E9;
+
+  --color-counter: red;
+}
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 62.5%;
+  font-family: 'Barlow', sans-serif;
 }
 
 body {
+  font-family: 'Barlow', sans-serif;
+  color: var(--color-light--1);
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.6;
   margin: 0;
-  background-color: #3f3f3f;
+  background-color: var(--color-light--1);
 }
 
