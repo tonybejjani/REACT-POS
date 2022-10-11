@@ -1,5 +1,8 @@
 /** @format */
-import MenuItems from './components/Menu/MenuItems';
+import Container from './components/UI/Container';
+import MainPanel from './components/UI/MainPanel';
+import NavBar from './components/UI/NavBar';
+import Menu from './components/UI/MenuUI/Menu';
 
 function App() {
   const menuItems = [
@@ -52,9 +55,12 @@ function App() {
   ];
 
   return (
-    <div>
-      <MenuItems menuItems={menuItems}></MenuItems>
-    </div>
+    <Container className="">
+      <NavBar />
+      <MainPanel className="">
+        <Menu className="" menuItems={menuItems} />
+      </MainPanel>
+    </Container>
   );
 }
 
