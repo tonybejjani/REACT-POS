@@ -3,7 +3,7 @@ import MenuItem from './MenuItem';
 import './MenuItems.css';
 function MenuItems(props) {
   return (
-    <div className="menuItems">
+    <div className="menu-items">
       {props.menuItems.map((menuItem) => (
         <MenuItem
           key={menuItem.id}

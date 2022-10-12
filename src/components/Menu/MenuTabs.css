@@ -1,0 +1,14 @@
+.menu-tabs {
+  width: 100%;
+  border-bottom: 1px solid #393c49;
+  gap: 4.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.menu-tabs li {
+  flex-shrink: 0;
+}
+

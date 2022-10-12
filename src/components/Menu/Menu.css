@@ -1,0 +1,6 @@
+.menu {
+  background-color: #252836;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+}
