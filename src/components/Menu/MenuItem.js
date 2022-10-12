@@ -37,6 +37,16 @@ function MenuItem(props) {
 
   const imgPick = imgs[props.img];
 
+  const getAddedItemData = () => {
+    const item = {
+      id: props.id,
+      name: props.name,
+      price: props.price,
+      img: props.img,
+    };
+
+    props.onAddItem(item);
+  };
   return (
     <div className="menu-item">
       <div className="menu-item__image">
@@ -45,7 +55,9 @@ function MenuItem(props) {
       <div className="menu-item__details">
         <h3 className="heading--tertiary menu-item__title">{props.name}</h3>
         <span className="menu-item__price">${props.price}</span>
-        <button className="menu-item__button">Add</button>
+        <button className="menu-item__button" onClick={getAddedItemData}>
+          Add
+        </button>
       </div>
     </div>
   );

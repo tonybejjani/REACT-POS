@@ -21,13 +21,17 @@ const MenuPanel = (props) => {
 
     setItemsPerCat(catItems);
   };
+
+  const getAddedItem = (item) => {
+    console.log(item);
+  };
   return (
     <Spacer className="menu-panel">
       <MenuTabs
         menuCategories={props.menuCategories}
         itemsCategory={getCategory}
       ></MenuTabs>
-      <MenuItems menuItems={itemsPerCat}></MenuItems>
+      <MenuItems menuItems={itemsPerCat} onAddItem={getAddedItem}></MenuItems>
     </Spacer>
   );
 };
