@@ -32,7 +32,7 @@ function App() {
   const menuItems = [
     {
       id: 1,
-      catgId: 1,
+      catId: 1,
       catgName: 'Yumcha',
       name: 'Pork Soup Dumpling',
       price: 2.0,
@@ -41,7 +41,7 @@ function App() {
     },
     {
       id: 2,
-      catgId: 1,
+      catId: 1,
       catgName: 'Yumcha',
       name: 'Prawn Dumpling',
       price: 2.5,
@@ -50,7 +50,7 @@ function App() {
     },
     {
       id: 3,
-      catgId: 1,
+      catId: 1,
       catgName: 'Yumcha',
       name: 'BBQ Pork Buns',
       price: 3,
@@ -60,7 +60,7 @@ function App() {
     },
     {
       id: 4,
-      catgId: 1,
+      catId: 1,
       catgName: 'Yumcha',
       name: 'Chicken Dim Sims',
       price: 2,
@@ -69,7 +69,7 @@ function App() {
     },
     {
       id: 5,
-      catgId: 1,
+      catId: 1,
       catgName: 'Yumcha',
       name: 'Pork & Prawn Siumai',
       price: 2.5,
@@ -78,7 +78,7 @@ function App() {
     },
     {
       id: 10,
-      catgId: 2,
+      catId: 2,
       catgName: 'Peking Duck',
       name: 'Peking Duck x2',
       searchKeys: [
@@ -95,7 +95,7 @@ function App() {
     },
     {
       id: 11,
-      catgId: 2,
+      catId: 2,
       catgName: 'Peking Duck',
       name: 'Peking Duck x4',
       searchKeys: [
@@ -112,7 +112,7 @@ function App() {
     },
     {
       id: 12,
-      catgId: 2,
+      catId: 2,
       catgName: 'Peking Duck',
       name: 'Peking Duck x6',
       searchKeys: [
@@ -129,7 +129,7 @@ function App() {
     },
     {
       id: 20,
-      catgId: 3,
+      catId: 3,
       catgName: 'Drinks',
       name: 'Water',
       searchKeys: [
@@ -146,7 +146,7 @@ function App() {
     },
     {
       id: 21,
-      catgId: 3,
+      catId: 3,
       catgName: 'Drinks',
       name: 'Coke',
       searchKeys: [
@@ -166,7 +166,7 @@ function App() {
     },
     {
       id: 22,
-      catgId: 3,
+      catId: 3,
       catgName: 'Drinks',
       name: 'Coke Zero',
       searchKeys: [
@@ -188,7 +188,7 @@ function App() {
     },
     {
       id: 23,
-      catgId: 3,
+      catId: 3,
       catgName: 'Drinks',
       name: 'Fanta',
       searchKeys: [
@@ -209,7 +209,7 @@ function App() {
 
     {
       id: 24,
-      catgId: 3,
+      catId: 3,
       catgName: 'Drinks',
       name: 'Sprite',
       searchKeys: [
@@ -229,7 +229,7 @@ function App() {
     },
     {
       id: 25,
-      catgId: 3,
+      catId: 3,
       catgName: 'Drinks',
       name: 'Solo',
       searchKeys: [
@@ -250,7 +250,7 @@ function App() {
     },
     {
       id: 30,
-      catgId: 4,
+      catId: 4,
       catgName: 'Entrees',
       name: 'Prawn Crackers',
       searchKeys: [
