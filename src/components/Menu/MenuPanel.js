@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import MenuItems from './MenuItems';
 import MenuTabs from './MenuTabs';
+import Spacer from '../UI/Spacer';
 import './MenuPanel.css';
 
 const MenuPanel = (props) => {
@@ -21,13 +22,13 @@ const MenuPanel = (props) => {
     setItemsPerCat(catItems);
   };
   return (
-    <div className="menuPanel">
+    <Spacer className="menu-panel">
       <MenuTabs
         menuCategories={props.menuCategories}
         itemsCategory={getCategory}
       ></MenuTabs>
       <MenuItems menuItems={itemsPerCat}></MenuItems>
-    </div>
+    </Spacer>
   );
 };
 

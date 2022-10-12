@@ -1,4 +1,7 @@
-.mainPanel {
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+.menu-panel {
+  background-color: #252836;
+  flex-direction: column;
+  padding: 2.4rem;
+  display: flex;
+  overflow: hidden;
 }
