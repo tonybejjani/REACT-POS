@@ -5,7 +5,15 @@ import MenuTabs from './MenuTabs';
 import './MenuPanel.css';
 
 const MenuPanel = (props) => {
-  const [itemsPerCat, setItemsPerCat] = useState(props.menuCategories);
+  const initActiveCat = props.menuCategories.filter(
+    (cat) => cat.active === true
+  );
+
+  const initItemsPerCat = props.menuItems.filter(
+    (item) => item.catId === initActiveCat[0].id
+  );
+
+  const [itemsPerCat, setItemsPerCat] = useState(initItemsPerCat);
 
   const getCategory = (category) => {
     const catItems = props.menuItems.filter((item) => item.catId === category);

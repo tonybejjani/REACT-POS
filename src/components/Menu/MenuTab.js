@@ -3,7 +3,7 @@
 import React from 'react';
 import './MenuTab.css';
 const MenuTab = (props) => {
-  const classes = `menu-tabs__link ${props.active ? 'menu-tabs__active' : ''}`;
+  let classes = `menu-tabs__link ${props.active ? 'menu-tabs__active' : ''}`;
 
   const getCategory = () => {
     props.category(props.id);
