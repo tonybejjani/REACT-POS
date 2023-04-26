@@ -24,6 +24,9 @@ const MenuPanel = (props) => {
 
   const getAddedItem = (item) => {
     console.log(item);
+    props.onAddItem(item);
+    // newOrderLog.push(item);
+    // console.log(newOrderLog);
   };
   return (
     <Spacer className="menu-panel">

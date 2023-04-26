@@ -1,14 +1,11 @@
 /** @format */
 
 import React from 'react';
-import './MenuSidebarItem.css';
+import './CartItem.css';
 
-const MenuSidebarItem = (props) => {
+const CartItem = (props) => {
   return (
-    <div
-      className="menu-sidebar__item menu-sidebar__item-normal"
-      data-item-id="2"
-    >
+    <div className="cart__item cart__item-normal" data-item-id="2">
       <div className="item-content__thumb">
         <div className="thumb__image">
           <img
@@ -25,15 +22,15 @@ const MenuSidebarItem = (props) => {
         </div>
       </div>
 
-      <div className="menu-sidebar__item__total">
+      <div className="cart__item__total">
         <span className="item__currency">$ </span>
         <span className="totalPrice">5.00</span>
       </div>
 
-      <div className="menu-sidebar__item__qty">
+      <div className="cart__item__qty">
         <span className="itemQty">2</span>
       </div>
-      <div className="menu-sidebar__item__remove">
+      <div className="cart__item__remove">
         {' '}
         <img
           alt="item"
@@ -45,4 +42,4 @@ const MenuSidebarItem = (props) => {
   );
 };
 
-export default MenuSidebarItem;
+export default CartItem;

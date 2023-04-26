@@ -3,6 +3,7 @@ import Container from './components/UI/Container';
 import MainPanel from './components/UI/MainPanel';
 import NavBar from './components/UI/NavBar';
 import Menu from './components/Menu/Menu';
+import Cart from './components/Cart/Cart';
 import './components/Menu/Menu.css';
 
 function App() {
@@ -278,6 +279,7 @@ function App() {
           menuItems={menuItems}
           menuCategories={menuCategories}
         />
+        <Cart />
       </MainPanel>
     </Container>
   );

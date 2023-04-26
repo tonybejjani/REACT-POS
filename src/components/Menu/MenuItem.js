@@ -43,6 +43,7 @@ function MenuItem(props) {
       name: props.name,
       price: props.price,
       img: props.img,
+      qty: 1,
     };
 
     props.onAddItem(item);

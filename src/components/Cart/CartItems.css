@@ -1,11 +1,11 @@
-.menu-sidebar__items {
+.cart__items {
   height: 60%;
   flex-direction: column;
   justify-content: space-between;
   display: flex;
 }
 
-.menu-sidebar__items-container {
+.cart__items-container {
   height: 100%;
   border-bottom: 1px solid #393c49;
   overflow: auto;
