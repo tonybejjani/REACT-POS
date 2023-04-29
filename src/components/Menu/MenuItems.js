@@ -2,9 +2,6 @@
 import MenuItem from './MenuItem';
 import './MenuItems.css';
 function MenuItems(props) {
-  const getAddedItem = (item) => {
-    props.onAddItem(item);
-  };
   return (
     <div className="menu-items">
       {props.menuItems.map((menuItem) => (
