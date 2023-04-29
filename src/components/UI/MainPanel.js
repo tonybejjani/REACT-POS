@@ -1,10 +1,9 @@
 /** @format */
 import React from 'react';
-import './MainPanel.css';
+import classes from './MainPanel.module.css';
 
 const MainPanel = (props) => {
-  const classes = 'main-panel ' + props.className;
-  return <div className={classes}>{props.children}</div>;
+  return <div className={classes['main-panel']}>{props.children}</div>;
 };
 
 export default MainPanel;

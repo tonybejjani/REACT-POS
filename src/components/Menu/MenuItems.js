@@ -14,7 +14,6 @@ function MenuItems(props) {
           name={menuItem.name}
           price={menuItem.price}
           img={menuItem.img}
-          onAddItem={getAddedItem}
         ></MenuItem>
       ))}
     </div>

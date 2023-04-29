@@ -1,4 +1,6 @@
 /** @format */
+import { useContext } from 'react';
+
 import './MenuItem.css';
 import buns from '../../img/menu/buns.png';
 import chicken from '../../img/menu/chicken.png';
@@ -16,26 +18,30 @@ import duck_x4 from '../../img/menu/duck_x4.png';
 import duck_x6 from '../../img/menu/duck_x6.png';
 import crackers from '../../img/menu/crackers.png';
 
-function MenuItem(props) {
-  const imgs = {
-    xlb,
-    hargow,
-    chicken,
-    siumai,
-    buns,
-    water,
-    solo,
-    fanta,
-    coke,
-    cokez,
-    sprite,
-    duck_x2,
-    duck_x4,
-    duck_x6,
-    crackers,
-  };
+import cartContext from '../../store/cart-context';
 
+const imgs = {
+  xlb,
+  hargow,
+  chicken,
+  siumai,
+  buns,
+  water,
+  solo,
+  fanta,
+  coke,
+  cokez,
+  sprite,
+  duck_x2,
+  duck_x4,
+  duck_x6,
+  crackers,
+};
+
+function MenuItem(props) {
   const imgPick = imgs[props.img];
+
+  const cartCtx = useContext(cartContext);
 
   const getAddedItemData = () => {
     const item = {
@@ -46,7 +52,7 @@ function MenuItem(props) {
       qty: 1,
     };
 
-    props.onAddItem(item);
+    cartCtx.addItem(item);
   };
   return (
     <div className="menu-item">
@@ -57,7 +63,7 @@ function MenuItem(props) {
         <h3 className="heading--tertiary menu-item__title">{props.name}</h3>
         <span className="menu-item__price">${props.price}</span>
         <button className="menu-item__button" onClick={getAddedItemData}>
-          Add
+          + Add
         </button>
       </div>
     </div>

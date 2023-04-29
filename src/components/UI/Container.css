@@ -1,6 +1,6 @@
 .container {
   max-width: 120rem;
-  max-height: 83.4rem;
+  height: 83.4rem;
   overscroll-behavior-y: none;
   overscroll-behavior-x: none;
   background-color: var(--color-dark--3);

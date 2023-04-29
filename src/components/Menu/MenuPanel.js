@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import MenuItems from './MenuItems';
 import MenuTabs from './MenuTabs';
 import Spacer from '../UI/Spacer';
-import './MenuPanel.css';
+import classes from './MenuPanel.module.css';
 
 const MenuPanel = (props) => {
   const initActiveCat = props.menuCategories.filter(
@@ -22,19 +22,13 @@ const MenuPanel = (props) => {
     setItemsPerCat(catItems);
   };
 
-  const getAddedItem = (item) => {
-    console.log(item);
-    props.onAddItem(item);
-    // newOrderLog.push(item);
-    // console.log(newOrderLog);
-  };
   return (
-    <Spacer className="menu-panel">
+    <Spacer className={classes['menu-panel']}>
       <MenuTabs
         menuCategories={props.menuCategories}
         itemsCategory={getCategory}
       ></MenuTabs>
-      <MenuItems menuItems={itemsPerCat} onAddItem={getAddedItem}></MenuItems>
+      <MenuItems menuItems={itemsPerCat}></MenuItems>
     </Spacer>
   );
 };

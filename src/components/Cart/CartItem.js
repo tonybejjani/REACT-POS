@@ -30,14 +30,7 @@ const CartItem = (props) => {
       <div className="cart__item__qty">
         <span className="itemQty">2</span>
       </div>
-      <div className="cart__item__remove">
-        {' '}
-        <img
-          alt="item"
-          src="http://localhost:1234/Trash.1f22d026.png?1665557587738#trash"
-          crossOrigin=""
-        />
-      </div>
+      <div className="cart__item__remove">-</div>
     </div>
   );
 };
