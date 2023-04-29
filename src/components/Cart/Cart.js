@@ -1,15 +1,16 @@
 /** @format */
-
+import { useContext } from 'react';
 import React from 'react';
+import cartContext from '../../store/cart-context';
 import Spacer from '../UI/Spacer';
 import './Cart.css';
 import CartItems from './CartItems';
 
 const Cart = (props) => {
-  console.log(props.itemToAdd);
+  const cartCtx = useContext(cartContext);
   return (
     <Spacer className="cart">
-      <CartItems itemToAdd={props.itemToAdd} />
+      <CartItems cartItems={cartCtx.items} />
     </Spacer>
   );
 };

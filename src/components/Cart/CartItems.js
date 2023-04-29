@@ -6,7 +6,9 @@ import './CartItems.css';
 const CartItems = (props) => {
   return (
     <div className="cart__items-container">
-      <CartItem className="cart__items" />
+      {props.cartItems.map((item) => (
+        <CartItem className="cart__items" cartItem={item} />
+      ))}
     </div>
   );
 };

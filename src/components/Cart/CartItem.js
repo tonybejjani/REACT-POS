@@ -36,7 +36,8 @@ const imgs = {
   crackers,
 };
 const CartItem = (props) => {
-  const imgPick = imgs[props.img];
+  const imgPick = imgs[props.cartItem.img];
+  const item = props.cartItem;
 
   return (
     <div className="cart__item cart__item-normal" data-item-id="2">
@@ -45,10 +46,10 @@ const CartItem = (props) => {
           <img src={imgPick} alt="item" crossOrigin="" />
         </div>
         <div className="thumb__title">
-          <span>{props.name}</span>
+          <span>{item.name}</span>
         </div>
         <div className="thumb__price">
-          <span>{props.price} </span>
+          <span>{item.price} </span>
         </div>
       </div>
 
@@ -58,7 +59,7 @@ const CartItem = (props) => {
       </div>
 
       <div className="cart__item__qty">
-        <span className="itemQty">{props.qty}</span>
+        <span className="itemQty">{item.qty}</span>
       </div>
       <div className="cart__item__remove">-</div>
     </div>
