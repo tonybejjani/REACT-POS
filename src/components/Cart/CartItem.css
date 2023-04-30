@@ -26,6 +26,11 @@
 .cart__item .thumb__title, .cart__item .thumb__price {
   font-size: 1.4rem;
   font-weight: 400;
+  
+}
+
+.cart__item .thumb__price {
+  color: var(--color-light--2 );
 }
 
 .cart__item__total {

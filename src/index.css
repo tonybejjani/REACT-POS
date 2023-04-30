@@ -41,7 +41,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   margin: 0;
-  background-color:var(--color-dark--2);
+  background-color:var(--color-light--4);
 }
 
 ul {

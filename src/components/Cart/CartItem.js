@@ -1,6 +1,7 @@
 /** @format */
 
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from '../../store/cart-context';
 import './CartItem.css';
 import buns from '../../img/menu/buns.png';
 import chicken from '../../img/menu/chicken.png';
@@ -17,6 +18,7 @@ import duck_x2 from '../../img/menu/duck_x2.png';
 import duck_x4 from '../../img/menu/duck_x4.png';
 import duck_x6 from '../../img/menu/duck_x6.png';
 import crackers from '../../img/menu/crackers.png';
+import trash from '../../assets/icons/SVG/Trash.svg';
 
 const imgs = {
   xlb,
@@ -34,10 +36,17 @@ const imgs = {
   duck_x4,
   duck_x6,
   crackers,
+  trash,
 };
 const CartItem = (props) => {
   const imgPick = imgs[props.cartItem.img];
   const item = props.cartItem;
+
+  const cartCtx = useContext(CartContext);
+
+  const removeItemHandler = () => {
+    cartCtx.removeItem(item);
+  };
 
   return (
     <div className="cart__item cart__item-normal" data-item-id="2">
@@ -49,19 +58,24 @@ const CartItem = (props) => {
           <span>{item.name}</span>
         </div>
         <div className="thumb__price">
-          <span>{item.price} </span>
+          <span>{item.price.toFixed(2)} </span>
         </div>
       </div>
 
       <div className="cart__item__total">
-        <span className="item__currency">$ </span>
-        <span className="totalPrice">5.00</span>
+        <span className="totalPrice">{item.totalItemAmount.toFixed(2)}</span>
       </div>
 
       <div className="cart__item__qty">
         <span className="itemQty">{item.qty}</span>
       </div>
-      <div className="cart__item__remove">-</div>
+      <div className="cart__item__remove">
+        <img
+          src={imgs.trash}
+          onClick={removeItemHandler}
+          alt="remove item button"
+        />
+      </div>
     </div>
   );
 };

@@ -48,6 +48,7 @@ function MenuItem(props) {
       id: props.id,
       name: props.name,
       price: props.price,
+      totalItemAmount: props.price,
       img: props.img,
       qty: 1,
     };
@@ -61,7 +62,7 @@ function MenuItem(props) {
       </div>
       <div className="menu-item__details">
         <h3 className="heading--tertiary menu-item__title">{props.name}</h3>
-        <span className="menu-item__price">${props.price}</span>
+        <span className="menu-item__price">$ {props.price}</span>
         <button className="menu-item__button" onClick={getAddedItemData}>
           + Add
         </button>
