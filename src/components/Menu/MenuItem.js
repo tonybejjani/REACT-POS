@@ -55,6 +55,7 @@ function MenuItem(props) {
 
     cartCtx.addItem(item);
   };
+
   return (
     <div className="menu-item">
       <div className="menu-item__image">

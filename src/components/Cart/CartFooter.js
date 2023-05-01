@@ -11,7 +11,9 @@ const CartFooter = () => {
     cartCtx.changePaymentType(e.target.value);
   };
 
-  console.log(cartCtx.paymentType);
+  const testBtn = () => {
+    console.log('test');
+  };
   return (
     <Fragment>
       <div className="menu-sidebar__transaction">
@@ -52,17 +54,21 @@ const CartFooter = () => {
         </div>
       </div>
 
-      {/* <div className="menu-sidebar__footer">
-        <button type="button" className="menu-sidebar__footer-save-btn hidden">
+      <div className="menu-sidebar__footer">
+        {/* <button type="button" className="menu-sidebar__footer-save-btn hidden">
           Save Order
-        </button>
+        </button> */}
         <button
           type="button"
-          className="menu-sidebar__footer-submit-btn disabled"
+          className={`menu-sidebar__footer-submit-btn ${
+            cartCtx.activateSubmit === true ? '' : 'disabled'
+          }`}
+          disabled={`${cartCtx.activateSubmit === true ? '' : 'disabled'}`}
+          onClick={testBtn}
         >
           Submit Order
         </button>
-      </div> */}
+      </div>
     </Fragment>
   );
 };

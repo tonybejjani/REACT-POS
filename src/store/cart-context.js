@@ -4,7 +4,8 @@ import React from 'react';
 const CartContext = React.createContext({
   items: [],
   totalAmount: 0,
-  paymentType: 'EFT',
+  paymentType: '',
+  activateSubmit: false,
   addItem: (item) => {},
   removeItem: (id) => {},
   changePaymentType: (type) => {},

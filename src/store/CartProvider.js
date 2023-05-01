@@ -7,6 +7,7 @@ const defaultCartState = {
   items: [],
   totalAmount: 0,
   paymentType: 'EFT',
+  activateSubmit: false,
 };
 
 const CART_ACTIONS = {
@@ -16,9 +17,10 @@ const CART_ACTIONS = {
 };
 
 const cartReducer = (state, action) => {
-  let updatedItems = state.items;
-  let updatedTotalAmount = state.totalAmount;
-  let updatedPaymentType = state.paymentType;
+  let updateItems = state.items;
+  let updateTotalAmount = state.totalAmount;
+  let updatePaymentType = state.paymentType;
+  let updateActivateSubmit = state.activateSubmit;
 
   switch (action.type) {
     case CART_ACTIONS.ADD_ITEM:
@@ -26,7 +28,7 @@ const cartReducer = (state, action) => {
         (item) => item.id === action.item.id
       );
 
-      const itemExists = updatedItems[itemToUpdateIndex];
+      const itemExists = updateItems[itemToUpdateIndex];
 
       if (itemExists) {
         const updateItemQty = itemExists.qty + 1;
@@ -36,37 +38,47 @@ const cartReducer = (state, action) => {
           totalItemAmount: updateItemQty * itemExists.price,
         };
 
-        updatedItems[itemToUpdateIndex] = itemUpdateResult;
+        updateItems[itemToUpdateIndex] = itemUpdateResult;
       } else {
-        updatedItems = [...state.items, action.item];
+        updateItems = [...state.items, action.item];
       }
 
-      updatedTotalAmount = state.totalAmount + action.item.price;
-      console.log(updatedPaymentType);
+      updateTotalAmount = state.totalAmount + action.item.price;
+
+      updateItems.length > 0
+        ? (updateActivateSubmit = true)
+        : (updateActivateSubmit = false);
       return {
-        items: updatedItems,
-        totalAmount: updatedTotalAmount,
-        paymentType: updatedPaymentType,
+        items: updateItems,
+        totalAmount: updateTotalAmount,
+        paymentType: updatePaymentType,
+        activateSubmit: updateActivateSubmit,
       };
 
     case CART_ACTIONS.REMOVE_ITEM:
-      updatedItems = state.items.filter((item) => item.id !== action.item.id);
-      updatedTotalAmount = state.totalAmount - action.item.totalItemAmount;
+      updateItems = state.items.filter((item) => item.id !== action.item.id);
+      updateTotalAmount = state.totalAmount - action.item.totalItemAmount;
+
+      updateItems.length > 0
+        ? (updateActivateSubmit = true)
+        : (updateActivateSubmit = false);
 
       return {
-        items: updatedItems,
-        totalAmount: updatedTotalAmount,
-        paymentType: updatedPaymentType,
+        items: updateItems,
+        totalAmount: updateTotalAmount,
+        paymentType: updatePaymentType,
+        activateSubmit: updateActivateSubmit,
       };
 
     case CART_ACTIONS.CHANGE_PAYMENT_TYPE:
       console.log(action.payType);
-      updatedPaymentType = action.payType;
+      updatePaymentType = action.payType;
 
       return {
-        items: updatedItems,
-        totalAmount: updatedTotalAmount,
-        paymentType: updatedPaymentType,
+        items: updateItems,
+        totalAmount: updateTotalAmount,
+        paymentType: updatePaymentType,
+        activateSubmit: updateActivateSubmit,
       };
 
     default:
@@ -95,6 +107,7 @@ const CartProvider = (props) => {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     paymentType: cartState.paymentType,
+    activateSubmit: cartState.activateSubmit,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     changePaymentType: changePaymentTypeHandler,
