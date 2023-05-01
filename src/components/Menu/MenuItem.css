@@ -53,6 +53,7 @@
   font-weight: 600;
   flex-shrink: 0;
   border-radius: 1.2rem;
+  border-color: var(--color-dark--4);
 }
   
 

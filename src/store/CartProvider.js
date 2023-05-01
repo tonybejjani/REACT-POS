@@ -6,22 +6,26 @@ import CartContext from './cart-context';
 const defaultCartState = {
   items: [],
   totalAmount: 0,
+  paymentType: 'EFT',
 };
 
 const CART_ACTIONS = {
   ADD_ITEM: 'add-item',
   REMOVE_ITEM: 'remove-item',
+  CHANGE_PAYMENT_TYPE: 'change-payment-type',
 };
 
 const cartReducer = (state, action) => {
   let updatedItems = state.items;
-  let updatedTotalAmount = state.totalAmount + action.item.price;
-  const itemToUpdateIndex = state.items.findIndex(
-    (item) => item.id === action.item.id
-  );
+  let updatedTotalAmount = state.totalAmount;
+  let updatedPaymentType = state.paymentType;
 
   switch (action.type) {
     case CART_ACTIONS.ADD_ITEM:
+      const itemToUpdateIndex = state.items.findIndex(
+        (item) => item.id === action.item.id
+      );
+
       const itemExists = updatedItems[itemToUpdateIndex];
 
       if (itemExists) {
@@ -37,20 +41,32 @@ const cartReducer = (state, action) => {
         updatedItems = [...state.items, action.item];
       }
 
-      console.log(updatedTotalAmount);
+      updatedTotalAmount = state.totalAmount + action.item.price;
+      console.log(updatedPaymentType);
       return {
         items: updatedItems,
         totalAmount: updatedTotalAmount,
+        paymentType: updatedPaymentType,
       };
 
     case CART_ACTIONS.REMOVE_ITEM:
       updatedItems = state.items.filter((item) => item.id !== action.item.id);
       updatedTotalAmount = state.totalAmount - action.item.totalItemAmount;
 
-      console.log(updatedTotalAmount);
       return {
         items: updatedItems,
         totalAmount: updatedTotalAmount,
+        paymentType: updatedPaymentType,
+      };
+
+    case CART_ACTIONS.CHANGE_PAYMENT_TYPE:
+      console.log(action.payType);
+      updatedPaymentType = action.payType;
+
+      return {
+        items: updatedItems,
+        totalAmount: updatedTotalAmount,
+        paymentType: updatedPaymentType,
       };
 
     default:
@@ -71,11 +87,17 @@ const CartProvider = (props) => {
     dispatchCartActions({ type: CART_ACTIONS.REMOVE_ITEM, item: item });
   };
 
+  const changePaymentTypeHandler = (payType) => {
+    dispatchCartActions({ type: CART_ACTIONS.CHANGE_PAYMENT_TYPE, payType });
+  };
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
+    paymentType: cartState.paymentType,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    changePaymentType: changePaymentTypeHandler,
   };
 
   return (
